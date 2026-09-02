@@ -349,3 +349,16 @@ footer a { color: var(--accent); }
 .egg { display: none; font: inherit; color: var(--muted); background: none; border: 0; padding: 0 0 0 0.3em; cursor: default; user-select: none; }
 
 .how { grid-template-columns: 1fr; max-width: 760px; }
+
+.construction { text-align: center; padding: 24px 0 40px; }
+.construction-sign { width: min(420px, 90vw); display: block; margin: 0 auto 8px; animation: swing 3s ease-in-out infinite; transform-origin: 50% 0; }
+.construction h1 { font-family: var(--font-head); font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0 0 8px; letter-spacing: -0.02em; }
+.construction p { color: var(--muted); max-width: 520px; margin: 0 auto 28px; }
+.construction-miner { width: 160px; image-rendering: auto; }
+
+@keyframes swing {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+html[data-theme="2012"] .construction { background: repeating-linear-gradient(-45deg, #ffd500 0 24px, #1d2129 24px 48px) top / 100% 14px no-repeat, #fff; border: 1px solid var(--border); box-shadow: var(--card-shadow); padding-top: 40px; }
