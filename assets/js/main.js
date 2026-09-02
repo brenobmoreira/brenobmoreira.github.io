@@ -31,3 +31,15 @@ document.querySelectorAll(".nav a[data-path]").forEach((link) => {
     link.classList.add("active");
   }
 });
+
+document.querySelectorAll("[data-copy]").forEach((button) => {
+  button.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(button.dataset.copy);
+      button.classList.add("copied");
+      setTimeout(() => button.classList.remove("copied"), 1800);
+    } catch {
+      window.getSelection().selectAllChildren(button.querySelector(".email-value"));
+    }
+  });
+});
