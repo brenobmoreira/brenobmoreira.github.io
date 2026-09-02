@@ -57,3 +57,12 @@ themeButtons.forEach((b) => {
   });
 });
 syncThemeButtons();
+
+document.querySelectorAll(".egg").forEach((egg) => {
+  egg.addEventListener("click", () => {
+    const root = document.documentElement;
+    const on = root.dataset.cover !== "sasuke";
+    if (on) root.dataset.cover = "sasuke"; else delete root.dataset.cover;
+    try { localStorage.setItem("cover", on ? "sasuke" : ""); } catch {}
+  });
+});

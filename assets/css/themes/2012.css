@@ -46,8 +46,11 @@ html[data-theme="2012"] .hero h1 .gradient { color: var(--accent); }
 html[data-theme="2012"] .hero { padding: 0; background: #fff; border: 1px solid var(--border); box-shadow: var(--card-shadow); }
 html[data-theme="2012"] .cover {
   display: block;
-  aspect-ratio: 851 / 315;
-  background: url("/assets/img/capa.jpg") center / 100% 100% no-repeat, #23365e;
+  height: 220px;
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(255, 255, 255, 0.25), transparent 50%),
+    linear-gradient(160deg, #6f8fc7 0%, #3b5998 45%, #23365e 100%);
+  transition: height 0.4s ease;
   border-bottom: 1px solid var(--border);
 }
 html[data-theme="2012"] .hero-body { display: block; min-height: 0; padding: 0 20px 20px 200px; position: relative; }
@@ -116,4 +119,7 @@ html[data-theme="2012"] footer a { color: #fff; }
 html[data-theme="2012"] .contact-icon, html[data-theme="2012"] .email-text { border-radius: 3px; }
 
 html[data-theme="2012"] .wave { display: none; }
-html[data-theme="2012"] .hero h1::after { content: " :v"; color: var(--muted); font-family: var(--font); font-weight: 700; }
+html[data-theme="2012"] .egg { display: inline; font-family: var(--font); font-weight: 700; transition: transform 0.2s ease, color 0.2s ease; }
+html[data-theme="2012"] .egg:hover { transform: rotate(-8deg) scale(1.1); color: var(--accent); }
+html[data-theme="2012"][data-cover="sasuke"] .cover { height: auto; aspect-ratio: 851 / 315; background: url("/assets/img/capa.jpg") center / 100% 100% no-repeat, #23365e; }
+html[data-theme="2012"][data-cover="sasuke"] .egg { color: var(--accent); }
