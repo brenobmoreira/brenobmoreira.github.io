@@ -347,3 +347,5 @@ footer a { color: var(--accent); }
 .fact-icon { flex: 0 0 auto; }
 
 .egg { display: none; font: inherit; color: var(--muted); background: none; border: 0; padding: 0 0 0 0.3em; cursor: default; user-select: none; }
+
+.how { grid-template-columns: 1fr; max-width: 760px; }
