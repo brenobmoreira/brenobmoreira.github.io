@@ -119,7 +119,7 @@ html[data-theme="2012"] footer a { color: #fff; }
 html[data-theme="2012"] .contact-icon, html[data-theme="2012"] .email-text { border-radius: 3px; }
 
 html[data-theme="2012"] .wave { display: none; }
-html[data-theme="2012"] .egg { display: inline; font-family: var(--font); font-weight: 700; transition: transform 0.2s ease, color 0.2s ease; }
-html[data-theme="2012"] .egg:hover { transform: rotate(-8deg) scale(1.1); color: var(--accent); }
+html[data-theme="2012"] .egg { display: inline-block; font-size: 0.9em; transition: transform 0.2s ease, filter 0.2s ease; }
+html[data-theme="2012"] .egg:hover { transform: rotate(-12deg) scale(1.15); }
 html[data-theme="2012"][data-cover="sasuke"] .cover { height: auto; aspect-ratio: 851 / 315; background: url("/assets/img/capa.jpg") center / 100% 100% no-repeat, #23365e; }
-html[data-theme="2012"][data-cover="sasuke"] .egg { color: var(--accent); }
+html[data-theme="2012"][data-cover="sasuke"] .egg { filter: drop-shadow(0 0 4px #3b5998); }
