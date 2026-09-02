@@ -43,7 +43,45 @@ html[data-theme="2012"] .theme-switch button[aria-checked="true"] { background: 
 html[data-theme="2012"] main { padding-top: 80px; }
 html[data-theme="2012"] .hero h1 { font-size: clamp(1.4rem, 3.2vw, 2.2rem); line-height: 1.4; letter-spacing: 0; font-weight: 400; }
 html[data-theme="2012"] .hero h1 .gradient { color: var(--accent); }
-html[data-theme="2012"] .hero { padding: 24px; background: #fff; border: 1px solid var(--border); box-shadow: var(--card-shadow); }
+html[data-theme="2012"] .hero { padding: 0; background: #fff; border: 1px solid var(--border); box-shadow: var(--card-shadow); }
+html[data-theme="2012"] .cover {
+  display: block;
+  height: 220px;
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(255, 255, 255, 0.25), transparent 50%),
+    linear-gradient(160deg, #6f8fc7 0%, #3b5998 45%, #23365e 100%);
+  border-bottom: 1px solid var(--border);
+}
+html[data-theme="2012"] .hero-body { display: block; min-height: 0; padding: 0 20px 20px 200px; position: relative; }
+html[data-theme="2012"] .hero-body .photo {
+  position: absolute;
+  left: 20px;
+  top: -80px;
+  width: 160px;
+  aspect-ratio: 1;
+  padding: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 11px;
+}
+html[data-theme="2012"] .hero-text { padding-top: 12px; }
+html[data-theme="2012"] .hero-text h1 { margin-bottom: 6px; }
+html[data-theme="2012"] .hero p.lead { font-size: 14px; margin-bottom: 14px; }
+html[data-theme="2012"] .hero .actions { position: absolute; right: 20px; top: -44px; gap: 6px; }
+html[data-theme="2012"] .btn.message { background: linear-gradient(#fff, #e6e6e6); color: #333; border-color: #999; }
+html[data-theme="2012"] .btn.message::before { content: "✉"; font-size: 13px; }
+html[data-theme="2012"] .about { padding: 16px 20px; background: #fff; border: 1px solid var(--border); box-shadow: var(--card-shadow); }
+html[data-theme="2012"] .about .section-title { margin-bottom: 10px; }
+html[data-theme="2012"] .facts li { border-bottom: 0; padding: 3px 0; font-size: 13px; }
+html[data-theme="2012"] .facts strong { color: var(--accent); }
+html[data-theme="2012"] .facts strong:hover { text-decoration: underline; }
+
+@media (max-width: 800px) {
+  html[data-theme="2012"] .hero-body { padding: 90px 16px 16px; text-align: center; }
+  html[data-theme="2012"] .hero-body .photo { left: 50%; transform: translateX(-50%); width: 140px; top: -70px; }
+  html[data-theme="2012"] .hero .actions { position: static; justify-content: center; margin-top: 8px; }
+}
 
 html[data-theme="2012"] .btn { font-size: 12px; font-weight: 700; padding: 6px 12px; border: 1px solid #999; background: linear-gradient(#fff, #e6e6e6); box-shadow: inset 0 1px 0 #fff; }
 html[data-theme="2012"] .btn.primary { background: linear-gradient(180deg, #5b74a8, #3b5998); border-color: #29487d; color: #fff; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3); }
