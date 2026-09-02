@@ -46,8 +46,8 @@ html[data-theme="2012"] .hero h1 .gradient { color: var(--accent); }
 html[data-theme="2012"] .hero { padding: 0; background: #fff; border: 1px solid var(--border); box-shadow: var(--card-shadow); }
 html[data-theme="2012"] .cover {
   display: block;
-  height: 220px;
-  background: url("/assets/img/capa.jpg") center 30% / cover no-repeat, #23365e;
+  aspect-ratio: 851 / 315;
+  background: url("/assets/img/capa.jpg") center / 100% 100% no-repeat, #23365e;
   border-bottom: 1px solid var(--border);
 }
 html[data-theme="2012"] .hero-body { display: block; min-height: 0; padding: 0 20px 20px 200px; position: relative; }
