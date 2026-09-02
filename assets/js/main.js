@@ -43,3 +43,17 @@ document.querySelectorAll("[data-copy]").forEach((button) => {
     }
   });
 });
+
+const themeButtons = document.querySelectorAll(".theme-switch button[data-theme-set]");
+const syncThemeButtons = () => {
+  const current = document.documentElement.dataset.theme;
+  themeButtons.forEach((b) => b.setAttribute("aria-checked", String(b.dataset.themeSet === current)));
+};
+themeButtons.forEach((b) => {
+  b.addEventListener("click", () => {
+    document.documentElement.dataset.theme = b.dataset.themeSet;
+    try { localStorage.setItem("theme", b.dataset.themeSet); } catch {}
+    syncThemeButtons();
+  });
+});
+syncThemeButtons();

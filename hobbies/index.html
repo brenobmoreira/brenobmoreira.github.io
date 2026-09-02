@@ -9,10 +9,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="/assets/js/theme.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Silkscreen&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/themes/terminal.css">
+  <link rel="stylesheet" href="/assets/css/themes/aero.css">
+  <link rel="stylesheet" href="/assets/css/themes/2012.css">
 </head>
 <body>
-<div class="blobs"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div></div>
+<div class="bg"></div>
 <div class="nav-wrap">
   <nav class="nav">
     <a class="brand" href="/" data-path="/">breno<span>.</span></a>
@@ -21,6 +26,11 @@
     <a href="/articles/" data-path="/articles/">Artigos</a>
     <a href="/blog/" data-path="/blog/" hidden>Blog</a>
     <a href="/hobbies/" data-path="/hobbies/" hidden>Hobbies</a>
+    <div class="theme-switch" role="radiogroup" aria-label="Tema">
+      <button type="button" role="radio" aria-checked="false" data-theme-set="aero" title="Frutiger Aero" hidden>2009</button>
+      <button type="button" role="radio" aria-checked="false" data-theme-set="2012" title="Facebook, Minecraft, YouTube">2012</button>
+      <button type="button" role="radio" aria-checked="false" data-theme-set="terminal" title="Terminal" hidden>hoje</button>
+    </div>
   </nav>
 </div>
 <main>

@@ -1,0 +1,47 @@
+html[data-theme="terminal"] {
+  --bg: #0a0c0a;
+  --bg-2: #0f120f;
+  --surface: rgba(140, 255, 170, 0.04);
+  --surface-2: rgba(140, 255, 170, 0.08);
+  --border: rgba(140, 255, 170, 0.18);
+  --text: #d6e6d3;
+  --muted: #7f9b7c;
+  --accent: #5cff8a;
+  --accent-2: #ffd75c;
+  --accent-3: #5cff8a;
+  --radius: 4px;
+  --radius-sm: 4px;
+  --font: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --font-head: var(--font);
+  --nav-bg: rgba(10, 12, 10, 0.85);
+  --nav-border: rgba(140, 255, 170, 0.3);
+  --nav-shadow: 0 0 0 1px rgba(0, 0, 0, 0.6), 0 12px 30px rgba(0, 0, 0, 0.6);
+  --nav-active-bg: rgba(92, 255, 138, 0.15);
+  --btn-primary-bg: #5cff8a;
+  --btn-primary-color: #061007;
+  --btn-primary-shadow: 0 0 18px rgba(92, 255, 138, 0.35);
+  --icon-filter: invert(0.75) sepia(0.4) hue-rotate(80deg);
+  --icon-filter-hover: invert(1);
+}
+
+html[data-theme="terminal"] .bg {
+  background:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 3px),
+    radial-gradient(ellipse at 50% 0%, rgba(92, 255, 138, 0.08), transparent 60%),
+    linear-gradient(rgba(140, 255, 170, 0.05) 1px, transparent 1px) 0 0 / 100% 32px,
+    linear-gradient(90deg, rgba(140, 255, 170, 0.05) 1px, transparent 1px) 0 0 / 32px 100%;
+}
+
+html[data-theme="terminal"] .nav .brand::before { content: "~/"; color: var(--muted); font-weight: 400; }
+html[data-theme="terminal"] .nav a.active::before { content: "> "; color: var(--accent); }
+html[data-theme="terminal"] .hero h1 { letter-spacing: -0.01em; font-weight: 700; }
+html[data-theme="terminal"] .hero h1::before { content: "$ "; color: var(--muted); }
+html[data-theme="terminal"] .hero h1::after { content: "_"; color: var(--accent); animation: blink 1s steps(1) infinite; }
+html[data-theme="terminal"] .wave { display: none; }
+html[data-theme="terminal"] .section-title::before { content: "## "; color: var(--muted); font-weight: 400; }
+html[data-theme="terminal"] .page-head h1::before { content: "# "; color: var(--muted); font-weight: 400; }
+html[data-theme="terminal"] .card:hover { box-shadow: 0 0 0 1px var(--accent), 0 0 24px rgba(92, 255, 138, 0.15); transform: none; }
+html[data-theme="terminal"] .photo { border-style: solid; box-shadow: 0 0 0 1px var(--border), 0 0 30px rgba(92, 255, 138, 0.1); }
+html[data-theme="terminal"] .btn.primary::before { content: "▶ "; font-size: 11px; }
+
+@keyframes blink { 50% { opacity: 0; } }
