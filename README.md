@@ -3,7 +3,7 @@
 Portfólio pessoal. HTML, CSS e JS puros, publicado pelo GitHub Pages direto da branch `main`.
 
 - `index.html` — página inicial
-- `projects/`, `cv/`, `talks/`, `articles/` — uma pasta por rota
+- `projects/`, `cv/`, `articles/` — uma pasta por rota
 - `assets/css/style.css` — estilos e animações
 - `assets/js/main.js` — reveal no scroll, brilho nos cards e aba ativa do menu
 
