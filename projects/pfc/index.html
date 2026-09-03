@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>breno · Projeto de Fim de Curso</title>
+  <meta name="description" content="Projeto e avaliação de um sistema de memória para agentes de IA, TCC de Breno Moreira na UFSC.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="/assets/js/theme.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Silkscreen&display=swap" rel="stylesheet">
+  <link rel="icon" href="/assets/img/favicon/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/favicon-180.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/themes/terminal.css">
+  <link rel="stylesheet" href="/assets/css/themes/aero.css">
+  <link rel="stylesheet" href="/assets/css/themes/2012.css">
+</head>
+<body>
+<div class="bg"></div>
+<div class="nav-wrap">
+  <nav class="nav">
+    <a class="brand" href="/" data-path="/">breno<span>.</span></a>
+    <a href="/projects/" data-path="/projects/">Projetos</a>
+    <a href="/cv/" data-path="/cv/">Currículo</a>
+    <a href="/articles/" data-path="/articles/" hidden>Artigos</a>
+    <a href="/blog/" data-path="/blog/" hidden>Blog</a>
+    <a href="/hobbies/" data-path="/hobbies/">Hobbies</a>
+    <div class="theme-switch" role="radiogroup" aria-label="Tema">
+      <button type="button" role="radio" aria-checked="false" data-theme-set="aero" title="Frutiger Aero" hidden>2009</button>
+      <button type="button" role="radio" aria-checked="false" data-theme-set="2012" title="Facebook, Minecraft, YouTube">2012</button>
+      <button type="button" role="radio" aria-checked="false" data-theme-set="terminal" title="Terminal" hidden>hoje</button>
+    </div>
+  </nav>
+</div>
+<main>
+<div class="page-head reveal">
+  <a class="back" href="/projects/">« Projetos</a>
+  <h1>Projeto de Fim de Curso</h1>
+  <p>Projeto e Avaliação de um Sistema de Memória para Agentes de IA: gerenciamento de contexto e persistência de fatos entre sessões</p>
+  <ul class="meta">
+    <li>UFSC · Engenharia de Controle e Automação · 2026</li>
+    <li>Orientador: Prof. Jomi Fred Hübner</li>
+    <li>Supervisor: Samir Pauli Fiates, HarboR</li>
+    <li>Nota 9.5</li>
+  </ul>
+  <div class="actions" style="margin-top:20px">
+    <a class="btn primary" href="https://repositorio.ufsc.br/handle/123456789/273865" target="_blank" rel="noopener">Ler no repositório da UFSC</a>
+  </div>
+</div>
+
+<section class="reveal">
+  <h2 class="section-title">O problema</h2>
+  <p class="prose">Modelos de linguagem não guardam nada entre chamadas. Um agente de uso contínuo perde o contexto, repete erros, ignora preferências do usuário e responde de forma inconsistente a cada nova sessão. Mandar o histórico inteiro a cada requisição não resolve: custa mais, demora mais e piora a resposta em contextos longos.</p>
+  <p class="prose">O trabalho projeta, desenvolve e avalia um sistema de memória aplicado à LivIA, o assistente de IA industrial da HarboR, usado por operadores de chão de fábrica.</p>
+</section>
+
+<section class="reveal">
+  <h2 class="section-title">O que foi construído</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="icon">🧠</div>
+      <h3>Memória de sessão</h3>
+      <p>Gerencia o contexto da conversa atual: buffer com janela deslizante, compactação disparada por limite de mensagens ou de tokens, e um sumário estruturado segmentado por mudança de tópico.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🗄️</div>
+      <h3>Memória de longo prazo</h3>
+      <p>Extrai preferências do usuário e fatos do ambiente, persiste em banco relacional e vetorial isolado por usuário e empresa, e injeta automaticamente nas sessões seguintes.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔎</div>
+      <h3>Busca de sessões anteriores</h3>
+      <p>Uma ferramenta do agente recupera sob demanda o resumo de conversas passadas quando o operador faz referência a elas.</p>
+    </div>
+    <div class="card">
+      <div class="icon">⚖️</div>
+      <h3>Política de admissão</h3>
+      <p>Distância de cosseno mais um árbitro baseado em modelo de linguagem evitam duplicatas e resolvem contradições entre memórias, com limiares calibrados em dados sintéticos.</p>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2 class="section-title">Resultados</h2>
+  <ul class="facts how">
+    <li><span class="fact-icon">✅</span><span>Todos os requisitos funcionais atendidos na avaliação.</span></li>
+    <li><span class="fact-icon">⏱️</span><span>Memória ativa não degradou a latência mediana de resposta, que ficou equivalente à configuração sem memória.</span></li>
+    <li><span class="fact-icon">🔒</span><span>Memórias estritamente isoladas por usuário e empresa.</span></li>
+    <li><span class="fact-icon">📏</span><span>Histórico de conversa mantido dentro do limite configurado, independente da duração da sessão.</span></li>
+  </ul>
+</section>
+
+<section class="reveal">
+  <h2 class="section-title">Stack</h2>
+  <p class="prose">Framework de orquestração de agentes, banco em memória para o contexto ativo, banco relacional e vetorial para o armazenamento durável, e um modelo de linguagem comercial para sumarização, extração e geração de respostas. O código é da HarboR e não é público.</p>
+</section>
+</main>
+<footer>
+  Breno Barroso Moreira · Florianópolis, SC ·
+  <a href="https://github.com/brenobmoreira">GitHub</a> ·
+  <a href="https://www.linkedin.com/in/breno-barroso-moreira/">LinkedIn</a>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
