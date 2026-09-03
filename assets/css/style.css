@@ -365,3 +365,18 @@ html[data-theme="2012"] .construction { background: repeating-linear-gradient(-4
 
 .stack-line { margin-top: 10px; font-size: 13px; color: var(--muted); }
 .stack-line span { display: inline-block; margin-right: 8px; padding: 2px 8px; border-radius: var(--radius-sm); background: var(--surface-2); color: var(--accent); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+a.card { cursor: pointer; }
+a.card::after {
+  content: "↗";
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  font-size: 15px;
+  color: var(--muted);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+a.card:hover::after { color: var(--accent); transform: translate(2px, -2px); }
+a.card:hover h3 { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+.badge.grade { color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); border-color: color-mix(in srgb, var(--accent) 40%, transparent); font-size: 12px; }
+.badge.grade::before { display: none; }

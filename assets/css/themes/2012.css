@@ -123,3 +123,7 @@ html[data-theme="2012"] .egg { display: inline; font-family: var(--font); font-w
 html[data-theme="2012"] .egg:hover { transform: rotate(-8deg) scale(1.1); color: var(--accent); }
 html[data-theme="2012"][data-cover="sasuke"] .cover { height: auto; aspect-ratio: 851 / 315; background: url("/assets/img/capa.jpg") center / 100% 100% no-repeat, #23365e; }
 html[data-theme="2012"][data-cover="sasuke"] .egg { color: var(--accent); }
+
+html[data-theme="2012"] .badge.grade { color: #fff; background: var(--accent); border-color: #29487d; }
+html[data-theme="2012"] a.card:hover { border-color: var(--accent); }
+html[data-theme="2012"] a.card::after { content: "»"; font-weight: 700; }
